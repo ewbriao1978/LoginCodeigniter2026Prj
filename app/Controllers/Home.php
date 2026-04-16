@@ -44,11 +44,16 @@ class Home extends BaseController
 
         if ($user && password_verify($password, $user['password'])) {
             // Login bem-sucedido
-            return "Login bem-sucedido! Bem-vindo, " . $user['name'] . "!";
+            return redirect()->to('/myhome'); // Redireciona para a página inicial do usuário
 
         } else {
             // Login falhou
             return "Email ou senha incorretos.";
         }
+    }
+
+    public function myHome()
+    {
+        return view('myhome');
     }
 }
