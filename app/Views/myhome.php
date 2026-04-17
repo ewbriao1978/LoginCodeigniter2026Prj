@@ -7,6 +7,10 @@
 </head>
 <body>
     <h1>Bem-vindo à sua página inicial!</h1>
+    <h2> Olá, <?= session()->get('user_name') ?>!</h2>
     <!-- criar login e logout  e flashmessages --> 
+     <br>
+     <br>
+        <a href="/logout">Logout</a>
 </body>
 </html>

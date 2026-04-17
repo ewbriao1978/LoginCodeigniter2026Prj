@@ -7,6 +7,16 @@
 </head>
 <body>
 
+<?php
+if (session()->getFlashdata('error')) {
+    echo '<p style="color:red;">' . session()->getFlashdata('error') . '</p>';
+}
+if (session()->getFlashdata('success')) {
+    echo '<p style="color:green;">' . session()->getFlashdata('success') . '</p>';
+}
+?>  
+
+
 <form action="/login" method="post">
     <input type="text" name="email" placeholder="Por favor, insira seu email" required>
     <input type="password" name="password" placeholder="Entre com a senha" required>
